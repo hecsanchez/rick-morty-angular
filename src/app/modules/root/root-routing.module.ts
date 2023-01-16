@@ -8,7 +8,7 @@ const routes = RouterConfig.routeNames;
 
 const rootRoutes: Routes = [
   { path: routes.home, component: HomePageComponent, pathMatch: 'full' },
-  { path: routes.error, component: ErrorPageComponent, pathMatch: 'full' },
+  { path: routes.error, component: ErrorPageComponent },
 ];
 
 @NgModule({

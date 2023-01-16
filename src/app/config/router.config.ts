@@ -4,9 +4,15 @@ export const ROUTER_CONFIG = new InjectionToken('router.config');
 
 const routeNames = {
   error: 'error',
-  characters: 'characters',
-  locations: 'locations',
-  home: ''
+  characters: {
+    list: 'characters',
+    detail: ':id'
+  },
+  locations: {
+    list: 'locations',
+    detail: ':id'
+  },
+  home: '',
 }
 
 export const RouterConfig: any = {
@@ -15,7 +21,7 @@ export const RouterConfig: any = {
     home: '',
     error: `/${routeNames.error}`,
     character: {
-      list: `/${routeNames.characters}`,
+      list: `${routeNames.characters.list}`,
       detail: (id: string) => `/${routeNames.characters}/${id}`,
     },
     location: {
