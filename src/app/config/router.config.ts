@@ -12,6 +12,10 @@ const routeNames = {
     list: 'locations',
     detail: ':id'
   },
+  episodes: {
+    list: 'episodes',
+    detail: ':id'
+  },
   home: '',
 }
 
@@ -21,7 +25,7 @@ export const RouterConfig: any = {
     home: '',
     error: `/${routeNames.error}`,
     character: {
-      list: `${routeNames.characters.list}`,
+      list: `/${routeNames.characters.list}`,
       detail: (id: string) => `/${routeNames.characters}/${id}`,
     },
     location: {
