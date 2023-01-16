@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./modules/root/root.module').then(m => m.RootModule),
   },
+  {
+    path: RouterConfig.routeNames.characters,
+    loadChildren: () => import('./modules/characters/characters.module').then(m => m.CharactersModule),
+  },
   { path: '**', redirectTo: RouterConfig.routes.error },
 ];
 

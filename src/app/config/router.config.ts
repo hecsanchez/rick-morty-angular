@@ -15,12 +15,12 @@ export const RouterConfig: any = {
     home: '',
     error: `/${routeNames.error}`,
     character: {
-      list: `/${routeNames.characters}/`,
-      detail: (id: string) => `/${routeNames.characters}//${id}`,
+      list: `/${routeNames.characters}`,
+      detail: (id: string) => `/${routeNames.characters}/${id}`,
     },
     location: {
       list: `/${routeNames.locations}/`,
-      detail: (id: string) => `/${routeNames.locations}//${id}`,
+      detail: (id: string) => `/${routeNames.locations}/${id}`,
     },
   },
 };

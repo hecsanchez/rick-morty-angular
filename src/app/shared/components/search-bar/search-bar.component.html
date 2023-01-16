@@ -1,0 +1,8 @@
+<div id="search-input">
+  <input
+    class="input"
+    placeholder="Search..."
+    [(ngModel)]="value"
+    (ngModelChange)="valueChange.emit(value)"
+  />
+</div>
