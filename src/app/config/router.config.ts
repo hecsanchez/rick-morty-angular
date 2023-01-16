@@ -3,15 +3,16 @@ import { InjectionToken } from '@angular/core';
 export const ROUTER_CONFIG = new InjectionToken('router.config');
 
 const routeNames = {
-  error: '404',
+  error: 'error',
   characters: 'characters',
-  locations: 'locations'
+  locations: 'locations',
+  home: ''
 }
 
 export const RouterConfig: any = {
   routeNames,
   routes: {
-    home: '/',
+    home: '',
     error: `/${routeNames.error}`,
     character: {
       list: `/${routeNames.characters}/`,
