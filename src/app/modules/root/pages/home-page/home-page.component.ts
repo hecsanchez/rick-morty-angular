@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
       debounceTime(500),
       distinctUntilChanged(),
       switchMap(searchText => this.httpClient.get("/api/search?q=" + searchText)))
-      .subscribe(data => console.log(data));
+      .subscribe();
   }
   search(value: string): void {
     const searchText = value

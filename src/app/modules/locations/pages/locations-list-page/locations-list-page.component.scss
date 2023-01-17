@@ -1,0 +1,47 @@
+.header {
+  margin-bottom: 50px;
+
+  h1 {
+    color: white;
+    font-size: 25px;
+  }
+}
+
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 800px;
+  padding: 50px 0;
+
+  .location {
+    border-bottom: 2px solid #262626;
+    height: 20px;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      background: #262626;
+    }
+
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 150px;
+
+  .load-more {
+    margin: 20px auto;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
+

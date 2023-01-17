@@ -1,0 +1,26 @@
+.character {
+  margin: auto;
+  max-width: 800px;
+  padding: 50px 0;
+  color: white;
+
+  .intro {
+    display: flex;
+
+    img {
+      margin-right: 20px;
+    }
+
+    .name, p {
+      margin-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+}

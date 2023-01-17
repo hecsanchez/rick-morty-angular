@@ -1,0 +1,50 @@
+.episode {
+  margin: auto;
+  max-width: 800px;
+  padding: 50px 0;
+  color: white;
+
+  .intro {
+    display: flex;
+
+    .name, p {
+      margin-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+}
+
+.characters {
+  margin: auto;
+  max-width: 800px;
+  padding: 50px 0;
+
+  .list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .character {
+
+    a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,1 +1,17 @@
-<p>Episodes works!</p>
+<app-header></app-header>
+<div class="episodes">
+  <div class="header">
+    <h1>Episodes</h1>
+  </div>
+  <app-search-bar (valueChange)="search($event)"></app-search-bar>
+  <app-spinner *ngIf="!episodes"></app-spinner>
+  <a [routerLink]="['/episodes/' + episode.id]"
+     class="episode"
+     *ngFor="let episode of (episodes | async)"
+  >
+    <span>{{episode.episode}} - {{episode.name}}</span>
+  </a>
+</div>
+<div class="footer">
+  <button class="load-more" (click)="loadMore()">Load More</button>
+</div>

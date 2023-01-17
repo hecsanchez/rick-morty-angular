@@ -1,11 +1,46 @@
+.header {
+  margin-bottom: 50px;
+
+  h1 {
+    color: white;
+    font-size: 25px;
+  }
+}
+
 .characters {
-  display: flex;
-  flex-wrap: wrap;
   margin: auto;
   max-width: 800px;
-  gap: 10px;
+  padding: 50px 0;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
   .character {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 150px;
+
+  .load-more {
+    margin: 20px auto;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
   }
 }

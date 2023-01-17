@@ -10,7 +10,11 @@ import {Character} from "~shared/models/character.model";
 export class LocationsService {
   constructor (private http: HttpClient) {}
 
-  getLocations(): Observable<Location[]> {
-    return this.http.get<Location[]>(EndpointsConfig.locations);
+  getLocations({ page, name }: { page: number, name?: string }): Observable<Location[]> {
+    return this.http.get<Location[]>(`${EndpointsConfig.locations}?page=${page}${name ? `&name=${name}` : ''}`);
+  }
+
+  getLocationById({ id }: { id: number }): Observable<Location> {
+    return this.http.get<Location>(`${EndpointsConfig.locations}/${id}`);
   }
 }

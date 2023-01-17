@@ -1,1 +1,17 @@
-<p>Locations works!</p>
+<app-header></app-header>
+<div class="locations">
+  <div class="header">
+    <h1>Locations</h1>
+  </div>
+  <app-search-bar (valueChange)="search($event)"></app-search-bar>
+  <app-spinner *ngIf="!locations"></app-spinner>
+  <a [routerLink]="['/locations/' + location.id]"
+    class="location"
+    *ngFor="let location of (locations | async)"
+  >
+      <span>{{location.name}}</span>
+  </a>
+</div>
+<div class="footer">
+  <button class="load-more" (click)="loadMore()">Load More</button>
+</div>

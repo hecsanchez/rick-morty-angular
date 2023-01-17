@@ -1,0 +1,24 @@
+header {
+  max-width: 800px;
+  margin: auto;
+
+  nav  {
+    padding: 20px 0;
+
+    ul {
+      display: flex;
+      gap: 15px;
+
+      li {
+        padding: 10px;
+        background: white;
+        border-radius: 10px;
+        font-size: 18px;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

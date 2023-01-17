@@ -10,7 +10,11 @@ import {Character} from "~shared/models/character.model";
 export class CharactersService {
   constructor (private http: HttpClient) {}
 
-  getCharacters({ page }: { page: Number }): Observable<Character[]> {
-    return this.http.get<Character[]>(`${EndpointsConfig.characters}?page=${page}`);
+  getCharacters({ page, name }: { page: number; name: string }): Observable<Character[]> {
+    return this.http.get<Character[]>(`${EndpointsConfig.characters}?page=${page}${name ? `&name=${name}` : ''}`);
+  }
+
+  getCharacterById({id} : {id: number | string}): Observable<Character[]> {
+    return this.http.get<Character[]>(`${EndpointsConfig.characters}/${id}`);
   }
 }

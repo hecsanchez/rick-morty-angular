@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { SearchBarComponent } from './search-bar.component';
+import { HeaderComponent } from './header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-describe('SearchBarComponent', () => {
-  let component: SearchBarComponent;
-  let fixture: ComponentFixture<SearchBarComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(
     waitForAsync(() => {
@@ -15,10 +15,10 @@ describe('SearchBarComponent', () => {
           RouterTestingModule,
           NoopAnimationsModule,
         ],
-        declarations: [SearchBarComponent],
+        declarations: [HeaderComponent],
       }).compileComponents();
 
-      fixture = TestBed.createComponent(SearchBarComponent);
+      fixture = TestBed.createComponent(HeaderComponent);
       component = fixture.debugElement.componentInstance;
       fixture.detectChanges();
     })

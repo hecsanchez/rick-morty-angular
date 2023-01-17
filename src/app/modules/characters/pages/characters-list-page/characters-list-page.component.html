@@ -1,19 +1,22 @@
-<h1>Characters List page</h1>
+<app-header></app-header>
 <div class="characters">
-  <app-spinner *ngIf="!characters"></app-spinner>
-  <div
-    class="character"
-    *ngFor="let character of (characters | async)"
-    infiniteScroll
-    [infiniteScrollDistance]=3
-    [infiniteScrollThrottle]="500"
-    (scrolled)="onScroll($event)"
-  >
-    <a [routerLink]="['/characters/' + character.id]">
-      <img ngSrc="{{character.image}}" width="150" height="150">
-      <span>{{character.name}}</span>
-    </a>
-
+  <div class="header">
+    <h1>Characters</h1>
   </div>
-
+  <app-search-bar (valueChange)="search($event)"></app-search-bar>
+  <app-spinner *ngIf="!characters"></app-spinner>
+  <div class="list">
+    <div
+      class="character"
+      *ngFor="let character of (characters | async)"
+    >
+      <a [routerLink]="['/characters/' + character.id]">
+        <img ngSrc="{{character.image}}" width="150" height="150">
+        <span>{{character.name}}</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="load-more" (click)="loadMore()">Load More</button>
+  </div>
 </div>

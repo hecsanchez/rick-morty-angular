@@ -1,1 +1,25 @@
-<h1>Location page</h1>
+<app-header></app-header>
+<app-spinner *ngIf="!location"></app-spinner>
+<div class="location" *ngIf="location">
+  <div class="intro">
+    <div>
+      <h1 class="name">{{ location.name }}</h1>
+      <p>Type: {{ location.type }}</p>
+      <p>Dimension: {{ location.dimension }}</p>
+    </div>
+  </div>
+  <div class="residents">
+    <h2>Residents</h2>
+    <div class="list">
+      <div
+        class="character"
+        *ngFor="let character of characters"
+      >
+        <a [routerLink]="['/characters/' + character.id]">
+          <img ngSrc="{{character.image}}" width="150" height="150">
+          <span>{{character.name}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
