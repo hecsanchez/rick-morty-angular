@@ -7,10 +7,10 @@ import {Character} from "~shared/models/character.model";
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersService {
+export class LocationsService {
   constructor (private http: HttpClient) {}
 
-  getCharacters({ page }: { page: Number }): Observable<Character[]> {
-    return this.http.get<Character[]>(`${EndpointsConfig.characters}?page=${page}`);
+  getLocations(): Observable<Location[]> {
+    return this.http.get<Location[]>(EndpointsConfig.locations);
   }
 }

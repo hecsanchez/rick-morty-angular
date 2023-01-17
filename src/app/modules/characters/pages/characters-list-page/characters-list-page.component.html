@@ -1,10 +1,19 @@
 <h1>Characters List page</h1>
-<div
-  class="characters"
-  *ngFor="let character of (characters | async)"
->
-  <a [routerLink]="['/characters/' + character.id]" [queryParams]="{debug: true}" fragment="education">
-    <span>{{character.name}}</span>
-  </a>
+<div class="characters">
+  <app-spinner *ngIf="!characters"></app-spinner>
+  <div
+    class="character"
+    *ngFor="let character of (characters | async)"
+    infiniteScroll
+    [infiniteScrollDistance]=3
+    [infiniteScrollThrottle]="500"
+    (scrolled)="onScroll($event)"
+  >
+    <a [routerLink]="['/characters/' + character.id]">
+      <img ngSrc="{{character.image}}" width="150" height="150">
+      <span>{{character.name}}</span>
+    </a>
+
+  </div>
 
 </div>

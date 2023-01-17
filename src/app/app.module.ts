@@ -9,6 +9,7 @@ import {ActionReducer, MetaReducer, State, StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {charactersReducer} from "~shared/reducers/characters.reducers";
 import {CharactersEffects} from "~shared/effects/characters.effects";
+import {SharedModule} from "~shared/shared.module";
 
 export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -30,6 +31,7 @@ export const metaReducers: MetaReducer<any>[] = [logger];
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SharedModule,
     HttpClientModule,
     StoreModule.forRoot({
       characters: charactersReducer

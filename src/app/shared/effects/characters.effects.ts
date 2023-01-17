@@ -4,7 +4,6 @@ import { of, switchMap} from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import {CharactersApi} from "~shared/actions/characters.actions";
 import {CharactersService} from "~shared/services/characters.service";
-import {Character} from "~shared/models/character.model";
 
 @Injectable()
 export class CharactersEffects {
@@ -15,16 +14,18 @@ export class CharactersEffects {
   getCharacters = createEffect(() =>
     this.actions.pipe(
         ofType(CharactersApi.loadCharacters),
-        switchMap((action) =>
-            this.charactersService.getCharacters().pipe(
-              map((response: any) => {
-                return CharactersApi.loadCharactersSuccess({ characters: response.results })
-              }),
-              catchError((error) =>
-                of(CharactersApi.loadCharactersError({error}))
-              )
+        switchMap((action) => {
+          CharactersApi.loadCharactersLoading({loading: true})
+          return this.charactersService.getCharacters({ page: action.page }).pipe(
+            map((response: any) => {
+              CharactersApi.loadCharactersLoading({loading: false})
+              return CharactersApi.loadCharactersSuccess({ characters: response.results })
+            }),
+            catchError((error) =>
+              of(CharactersApi.loadCharactersError({error}))
             )
-        )
+          )
+        })
       )
   );
 }

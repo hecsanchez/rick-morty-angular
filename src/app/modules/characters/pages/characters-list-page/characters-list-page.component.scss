@@ -1,0 +1,11 @@
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 800px;
+  gap: 10px;
+
+  .character {
+    flex: 1;
+  }
+}
