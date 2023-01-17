@@ -1,1 +1,10 @@
 <h1>Characters List page</h1>
+<div
+  class="characters"
+  *ngFor="let character of (characters | async)"
+>
+  <a [routerLink]="['/characters/' + character.id]" [queryParams]="{debug: true}" fragment="education">
+    <span>{{character.name}}</span>
+  </a>
+
+</div>
