@@ -8,23 +8,5 @@ import {HttpClient} from "@angular/common/http";
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
-  results: Observable<any> | undefined
-  subject = new Subject()
-  resultsSubscription = Subscription;
-
-  constructor(private httpClient: HttpClient) {}
-
-  ngOnInit() {
-    // @ts-ignore
-    this.resultsSubscription = this.subject.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      switchMap(searchText => this.httpClient.get("/api/search?q=" + searchText)))
-      .subscribe();
-  }
-  search(value: string): void {
-    const searchText = value
-    this.subject.next(searchText)
-  }
+export class HomePageComponent {
 }
