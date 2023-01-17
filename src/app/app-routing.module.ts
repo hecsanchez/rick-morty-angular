@@ -5,7 +5,8 @@ import { RouterConfig } from "~app/config/router.config";
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/root/root.module').then(m => m.RootModule),
+    redirectTo: '/characters',
+    pathMatch: 'full'
   },
   {
     path: RouterConfig.routeNames.characters.list,
